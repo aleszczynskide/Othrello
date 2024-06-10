@@ -11,13 +11,24 @@ public class GameLogic : MonoBehaviour
 
     void Start()
     {
+        bool _white = true;
         for (int i = 0; i < 8; i++)
         {
+            if (_white)
+                _white = false;
+            else
+                _white = true;
             for (int j = 0; j < 8; j++)
             {
                 GameObject slotToSpawn = Instantiate(SlotPrefab);
                 slotToSpawn.transform.position = new Vector3(i, j, 0);
                 slotToSpawn.GetComponent<SlotView>().GameLogic = this;
+                if(_white)
+                slotToSpawn.gameObject.GetComponent<SpriteRenderer>().color= Color.black;
+                if (_white)
+                    _white = false;
+                else
+                    _white = true;
             }
         }
     }
