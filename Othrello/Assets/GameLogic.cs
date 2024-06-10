@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
-using Unity.UI;
 using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
