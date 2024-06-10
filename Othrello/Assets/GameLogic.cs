@@ -12,7 +12,7 @@ public class GameLogic : MonoBehaviour
     public GameObject Pointer;
     public GameObject PointerPrefab;
     List<GameObject> PointerList = new List<GameObject>();
-
+    bool Valid;
     void Start()
     {
         bool _black = true;
@@ -64,6 +64,7 @@ public class GameLogic : MonoBehaviour
     }
     public void CheckForValidMove()
     {
+        Valid = false;
         if (PointerList.Count != 0)
         {
             for (int i = 0; i < PointerList.Count; i++)
@@ -105,7 +106,6 @@ public class GameLogic : MonoBehaviour
     }
     public void CheckForWhiteValidMove(int x, int y)
     {
-        bool Valid = false;
         List<GameObject> goList = new List<GameObject>();
         for (int i = 1; i < 8; i++)
         {
@@ -435,7 +435,6 @@ public class GameLogic : MonoBehaviour
 
     public void CheckForBlackValidMove(int x, int y)
     {
-        bool Valid = false;
         List<GameObject> goList = new List<GameObject>();
         for (int i = 1; i < 8; i++)
         {

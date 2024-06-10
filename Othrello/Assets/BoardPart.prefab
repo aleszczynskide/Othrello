@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.15686275}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameLogic: {fileID: 0}
+  Piece: {fileID: 0}
   PiecePrefab: {fileID: 4155938961556053783, guid: 71598176c36bbf944848ee406a53a0cc, type: 3}
+  PositionX: 0
+  PositionY: 0
 --- !u!65 &-4997431710507082571
 BoxCollider:
   m_ObjectHideFlags: 0
