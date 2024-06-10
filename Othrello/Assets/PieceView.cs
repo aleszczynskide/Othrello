@@ -5,7 +5,7 @@ using UnityEngine;
 public class PieceView : MonoBehaviour
 {
     internal Animator anim;
-    internal bool WhiteColor;
+    public bool WhiteColor;
     void Start()
     {
       anim = GetComponent<Animator>();

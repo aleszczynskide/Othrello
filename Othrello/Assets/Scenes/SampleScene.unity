@@ -248,6 +248,7 @@ MonoBehaviour:
   PiecePrefab: {fileID: 4155938961556053783, guid: 71598176c36bbf944848ee406a53a0cc, type: 3}
   WhiteColor: 0
   Pointer: {fileID: 1702202716}
+  PointerPrefab: {fileID: 8927696153538748242, guid: 33fee333ab588af4990a43e40914b996, type: 3}
 --- !u!4 &1013523126
 Transform:
   m_ObjectHideFlags: 0
