@@ -20,6 +20,7 @@ public class GameLogic : MonoBehaviour
     public Text WhiteText;
     public Text BlackText;
     public Text WinText;
+    public GameObject Button;
     void Start()
     {
         bool _black = true;
@@ -1434,6 +1435,7 @@ public class GameLogic : MonoBehaviour
             }
             Count();
             WinText.gameObject.SetActive(true);
+            Button.SetActive(true);
             if (Whites > Blacks)
             {
                 WinText.text = "Wygra³y Bia³e! " + Whites + " : " + Blacks;
