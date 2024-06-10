@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7887124933818873492}
   - component: {fileID: -4997431710507082571}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: BoardPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameLogic: {fileID: 0}
+  PiecePrefab: {fileID: 4155938961556053783, guid: 71598176c36bbf944848ee406a53a0cc, type: 3}
 --- !u!65 &-4997431710507082571
 BoxCollider:
   m_ObjectHideFlags: 0
