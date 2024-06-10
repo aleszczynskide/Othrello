@@ -103,7 +103,7 @@ public class GameLogic : MonoBehaviour
                 }
             }
         }
-
+        GameOver();
     }
     public void CheckForWhiteValidMove(int x, int y)
     {
@@ -427,10 +427,6 @@ public class GameLogic : MonoBehaviour
                 goList.Clear();
                 break;
             }
-        }
-        if (!Valid)
-        {
-            GameOver();
         }
     }
 
@@ -756,11 +752,6 @@ public class GameLogic : MonoBehaviour
                 goList.Clear();
                 break;
             }
-        }
-        Debug.Log(Valid);
-        if (!Valid)
-        {
-            GameOver();
         }
     }
     public void CheckWhiteMove(int x, int y)
@@ -1432,26 +1423,29 @@ public class GameLogic : MonoBehaviour
 
     void GameOver()
     {
-        for (int i = 0; i < 8; i++)
+        if (!Valid)
         {
-            for (int j = 0; j < 8; j++)
+            for (int i = 0; i < 8; i++)
             {
-                GameTable[i, j].GetComponent<SlotView>().ValidMove = false;
+                for (int j = 0; j < 8; j++)
+                {
+                    GameTable[i, j].GetComponent<SlotView>().ValidMove = false;
+                }
             }
-        }
-        Count();
-        WinText.gameObject.SetActive(true);
-        if (Whites > Blacks)
-        {
-            WinText.text = "Wygra造 Bia貫! " + Whites + " : " + Blacks;
-        }
-        if (Whites < Blacks)
-        {
-            WinText.text = "Wygra造 Bia貫! " + Blacks + " : " + Whites;
-        }
-        if (Whites == Blacks)
-        {
-            WinText.text = "REMIS!!!!!" + Whites + " : " + Blacks;
+            Count();
+            WinText.gameObject.SetActive(true);
+            if (Whites > Blacks)
+            {
+                WinText.text = "Wygra造 Bia貫! " + Whites + " : " + Blacks;
+            }
+            if (Whites < Blacks)
+            {
+                WinText.text = "Wygra造 Bia貫! " + Blacks + " : " + Whites;
+            }
+            if (Whites == Blacks)
+            {
+                WinText.text = "REMIS!!!!!" + Whites + " : " + Blacks;
+            }
         }
     }
     public void ChangePlayerStatus()
