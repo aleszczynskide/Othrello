@@ -6,7 +6,6 @@ public class SlotView : MonoBehaviour
 {
     public GameLogic GameLogic;
 
-
     private void OnMouseDown()
     {
         if (GameLogic.CurrentPlayer == 1)
