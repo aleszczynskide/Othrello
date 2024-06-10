@@ -43,7 +43,7 @@ public class SlotView : MonoBehaviour
                     GameLogic.CheckForValidMove();
                 }
             }
-           
+            GameLogic.Count();
         }
     }
 }

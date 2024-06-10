@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using Unity.UI;
+using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
@@ -13,6 +15,11 @@ public class GameLogic : MonoBehaviour
     public GameObject PointerPrefab;
     List<GameObject> PointerList = new List<GameObject>();
     bool Valid;
+    int Whites;
+    int Blacks;
+    public Text WhiteText;
+    public Text BlackText;
+    public Text WinText;
     void Start()
     {
         bool _black = true;
@@ -55,12 +62,7 @@ public class GameLogic : MonoBehaviour
         GameTable[4, 3].GetComponent<SlotView>().Piece = pieceToSpawn3;
         GameTable[4, 4].GetComponent<SlotView>().Piece = pieceToSpawn4;
         CheckForValidMove();
-    }
-
-
-    void Update()
-    {
-
+        Count();
     }
     public void CheckForValidMove()
     {
@@ -77,7 +79,6 @@ public class GameLogic : MonoBehaviour
             for (int j = 0; j < 8; j++)
             {
                 GameTable[i, j].GetComponent<SlotView>().ValidMove = false;
-
             }
         }
         if (WhiteColor)
@@ -756,6 +757,7 @@ public class GameLogic : MonoBehaviour
                 break;
             }
         }
+        Debug.Log(Valid);
         if (!Valid)
         {
             GameOver();
@@ -1437,6 +1439,20 @@ public class GameLogic : MonoBehaviour
                 GameTable[i, j].GetComponent<SlotView>().ValidMove = false;
             }
         }
+        Count();
+        WinText.gameObject.SetActive(true);
+        if (Whites > Blacks)
+        {
+            WinText.text = "Wygra³y Bia³e! " + Whites + " : " + Blacks;
+        }
+        if (Whites < Blacks)
+        {
+            WinText.text = "Wygra³y Bia³e! " + Blacks + " : " + Whites;
+        }
+        if (Whites == Blacks)
+        {
+            WinText.text = "REMIS!!!!!" + Whites + " : " + Blacks;
+        }
     }
     public void ChangePlayerStatus()
     {
@@ -1450,5 +1466,29 @@ public class GameLogic : MonoBehaviour
             Pointer.GetComponent<Animator>().SetBool("White", true);
             WhiteColor = true;
         }
+    }
+    internal void Count()
+    {
+        Whites = 0;
+        Blacks = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (GameTable[i, j].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[i, j].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        Whites++;
+                    }
+                    else
+                    {
+                        Blacks++;
+                    }
+                }
+            }
+        }
+        WhiteText.text = "Bia³e: " + Whites;
+        BlackText.text = "Czarne: " + Blacks;
     }
 }
