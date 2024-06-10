@@ -93,8 +93,14 @@ public class GameLogic : MonoBehaviour
                 }
                 else
                 {
+                    goList.Clear();
                     break;
                 }
+            }
+            else
+            {
+                goList.Clear();
+                break;
             }
         }
         for (int i = 1; i < 8; i++)
@@ -128,8 +134,14 @@ public class GameLogic : MonoBehaviour
                 }
                 else
                 {
+                    goList.Clear();
                     break;
                 }
+            }
+            else
+            {
+                goList.Clear();
+                break;
             }
         }
         for (int i = 1; i < 8; i++)
@@ -163,8 +175,14 @@ public class GameLogic : MonoBehaviour
                 }
                 else
                 {
+                    goList.Clear();
                     break;
                 }
+            }
+            else
+            {
+                goList.Clear();
+                break;
             }
         }
         for (int i = 1; i < 8; i++)
@@ -198,15 +216,514 @@ public class GameLogic : MonoBehaviour
                 }
                 else
                 {
+                    goList.Clear();
                     break;
                 }
             }
+            else
+            {
+                goList.Clear();
+                break;
+            }
         }
+        for (int i = 1; i < 8; i++)
+        {
+            if (i + x < 8 && i + y <8)
+            {
+                if (GameTable[x + i, y + i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (!GameTable[x + i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x + i, y + i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (GameTable[x + i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", true);
+                                goList[j].GetComponent<PieceView>().WhiteColor = true;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (i + x < 8 && y-i>-1)
+            {
+                if (GameTable[x + i, y - i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (!GameTable[x + i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x + i, y - i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (GameTable[x + i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", true);
+                                goList[j].GetComponent<PieceView>().WhiteColor = true;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (x - i > -1 && y - i > -1)
+            {
+                if (GameTable[x - i, y - i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (!GameTable[x - i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x - i, y - i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (GameTable[x - i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", true);
+                                goList[j].GetComponent<PieceView>().WhiteColor = true;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (x-i >-1 && i + y < 8)
+            {
+                if (GameTable[x - i, y + i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (!GameTable[x - i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x - i, y + i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (GameTable[x - i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", true);
+                                goList[j].GetComponent<PieceView>().WhiteColor = true;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+
     }
 
     public void CheckBlackMove(int x, int y)
     {
-
+        List<GameObject> goList = new List<GameObject>();
+        for (int i = 1; i < 8; i++)
+        {
+            if (i + x < 8)
+            {
+                if (GameTable[x + i, y].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x + i, y].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x + i, y].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x + i, y].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (x - i > -1)
+            {
+                if (GameTable[x - i, y].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x - i, y].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x - i, y].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x - i, y].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (i + y < 8)
+            {
+                if (GameTable[x, y + i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x, y + i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (y - i > -1)
+            {
+                if (GameTable[x, y - i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x, y - i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (i + x < 8 && i + y < 8)
+            {
+                if (GameTable[x + i, y + i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x + i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x + i, y + i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x + i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (i + x < 8 && y - i > -1)
+            {
+                if (GameTable[x + i, y - i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x + i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x + i, y - i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x + i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (x - i > -1 && y - i > -1)
+            {
+                if (GameTable[x - i, y - i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x - i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x - i, y - i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x - i, y - i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
+        for (int i = 1; i < 8; i++)
+        {
+            if (x - i > -1 && i + y < 8)
+            {
+                if (GameTable[x - i, y + i].GetComponent<SlotView>().Piece != null)
+                {
+                    if (GameTable[x - i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        goList.Add(GameTable[x - i, y + i].GetComponent<SlotView>().Piece);
+                    }
+                    else if (!GameTable[x - i, y + i].GetComponent<SlotView>().Piece.GetComponent<PieceView>().WhiteColor)
+                    {
+                        if (goList.Count > 0)
+                        {
+                            for (int j = 0; j < goList.Count; j++)
+                            {
+                                goList[j].GetComponent<Animator>().SetBool("White", false);
+                                goList[j].GetComponent<PieceView>().WhiteColor = false;
+                            }
+                            goList.Clear();
+                            break;
+                        }
+                        else
+                        {
+                            goList.Clear();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    goList.Clear();
+                    break;
+                }
+            }
+            else
+            {
+                goList.Clear();
+                break;
+            }
+        }
     }
 
 
