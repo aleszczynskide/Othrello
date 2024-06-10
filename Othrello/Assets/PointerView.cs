@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class PointerView : MonoBehaviour
 {
+    AudioSource audioData;
+    private void Start()
+    {
+        audioData = GetComponent<AudioSource>();
+        audioData.UnPause();
+    }
     void Update()
     {
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -776,6 +776,7 @@ public class GameLogic : MonoBehaviour
                             {
                                 goList[j].GetComponent<Animator>().SetBool("White", true);
                                 goList[j].GetComponent<PieceView>().WhiteColor = true;
+                                goList[j].GetComponent<PieceView>().PlaySound();
                             }
                             goList.Clear();
                             break;

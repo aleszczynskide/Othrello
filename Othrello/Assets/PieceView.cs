@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PieceView : MonoBehaviour
 {
+    AudioSource audioData;
     internal Animator anim;
     public bool WhiteColor;
     void Start()
     {
-      anim = GetComponent<Animator>();
+        audioData = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
-
-    void Update()
+   public void PlaySound()
     {
-        
+        audioData.Play();
     }
 }
